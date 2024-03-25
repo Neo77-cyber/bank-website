@@ -1,29 +1,79 @@
-// dashboard side bar
-const menuBtn = document.querySelector(".menu-btn");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".overlay");
+// // dashboard side bar
+// const menuBtn = document.querySelector(".menu-btn");
+// const sidebar = document.querySelector(".sidebar");
+// const overlay = document.querySelector(".overlay");
+// const navLinks = document.querySelectorAll(".nav-link");
+// const contentSections = document.querySelectorAll(".content-section");
+
+// menuBtn.addEventListener("click", () => {
+//   sidebar.classList.toggle("open");
+//   overlay.classList.toggle("show");
+// });
+
+// overlay.addEventListener("click", () => {
+//   sidebar.classList.remove("open");
+//   overlay.classList.remove("show");
+// });
+
+// navLinks.forEach((link) => {
+//   link.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     const contentId = e.target.dataset.content;
+//     contentSections.forEach((section) => {
+//       section.classList.remove("show");
+//     });
+//     const targetSection = document.getElementById(contentId);
+//     targetSection.classList.add("show");
+//   });
+// });
+
+// help and support
+const items = document.querySelectorAll(".accordion button");
+
+var questions = document.getElementsByClassName("question");
+for (var i = 0; i < questions.length; i++) {
+questions[i].addEventListener("click", function () {
+  this.classList.toggle("active");
+
+  var answer = this.nextElementSibling;
+  if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      answer.style.marginBottom = "0";
+  } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.style.marginBottom = "1.2em";
+  }
+})}
+
 const navLinks = document.querySelectorAll(".nav-link");
-const contentSections = document.querySelectorAll(".content-section");
-
-menuBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  overlay.classList.toggle("show");
-});
-
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-  overlay.classList.remove("show");
-});
 
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const contentId = e.target.dataset.content;
-    contentSections.forEach((section) => {
-      section.classList.remove("show");
-    });
-    const targetSection = document.getElementById(contentId);
-    targetSection.classList.add("show");
+    let url;
+
+    switch (contentId) {
+      case "dashboard":
+        url = "dashboard.html";
+        break;
+      case "profile":
+        url = "profile.html";
+        break;
+      case "help-and-support":
+        url = "help-and-support.html";
+        break;
+      case "transfer":
+        url = "transfer.html";
+        break;
+      case "logout":
+        url = "logout.html";
+        break;
+      default:
+        url = "index.html";
+    }
+
+    window.location.href = url;
   });
 });
 
