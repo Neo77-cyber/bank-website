@@ -406,6 +406,9 @@ header {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .sidebar {
+    height: 80vh;
+  }
   .card {
     max-width: 450px;
   }

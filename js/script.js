@@ -1,31 +1,30 @@
-// // dashboard side bar
-// const menuBtn = document.querySelector(".menu-btn");
-// const sidebar = document.querySelector(".sidebar");
-// const overlay = document.querySelector(".overlay");
-// const navLinks = document.querySelectorAll(".nav-link");
-// const contentSections = document.querySelectorAll(".content-section");
+// dashboard side bar
+const menuBtn = document.querySelector(".menu-btn");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".overlay");
+const contentSections = document.querySelectorAll(".content-section");
 
-// menuBtn.addEventListener("click", () => {
-//   sidebar.classList.toggle("open");
-//   overlay.classList.toggle("show");
-// });
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("show");
+});
 
-// overlay.addEventListener("click", () => {
-//   sidebar.classList.remove("open");
-//   overlay.classList.remove("show");
-// });
+overlay.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+  overlay.classList.remove("show");
+});
 
-// navLinks.forEach((link) => {
-//   link.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const contentId = e.target.dataset.content;
-//     contentSections.forEach((section) => {
-//       section.classList.remove("show");
-//     });
-//     const targetSection = document.getElementById(contentId);
-//     targetSection.classList.add("show");
-//   });
-// });
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const contentId = e.target.dataset.content;
+    contentSections.forEach((section) => {
+      section.classList.remove("show");
+    });
+    const targetSection = document.getElementById(contentId);
+    targetSection.classList.add("show");
+  });
+});
 
 // help and support
 const items = document.querySelectorAll(".accordion button");
