@@ -16,36 +16,9 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("show");
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const contentId = e.target.dataset.content;
-    contentSections.forEach((section) => {
-      section.classList.remove("show");
-    });
-    const targetSection = document.getElementById(contentId);
-    targetSection.classList.add("show");
-  });
-});
 
-// help and support
-const items = document.querySelectorAll(".accordion button");
 
-var questions = document.getElementsByClassName("question");
-for (var i = 0; i < questions.length; i++) {
-questions[i].addEventListener("click", function () {
-  this.classList.toggle("active");
-
-  var answer = this.nextElementSibling;
-  if (answer.style.maxHeight) {
-      answer.style.maxHeight = null;
-      answer.style.marginBottom = "0";
-  } else {
-      answer.style.maxHeight = answer.scrollHeight + "px";
-      answer.style.marginBottom = "1.2em";
-  }
-})}
-
+// this is to go to other parts of the page like profile, support etc
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -76,7 +49,7 @@ navLinks.forEach((link) => {
   });
 });
 
-// toggle amount view
+// toggle amount(balance) view
 const balanceAmount = document.getElementById("balance-amount");
 const cardHolderName = document.getElementById("card-holder-name");
 const toggleBalanceBtn = document.getElementById("toggle-balance");
@@ -92,3 +65,22 @@ toggleBalanceBtn.addEventListener("click", () => {
     eyeIcon.style.stroke = "#ccc"; 
   }
 });
+
+
+// help and support accordion
+const items = document.querySelectorAll(".accordion button");
+
+var questions = document.getElementsByClassName("question");
+for (var i = 0; i < questions.length; i++) {
+questions[i].addEventListener("click", function () {
+  this.classList.toggle("active");
+
+  var answer = this.nextElementSibling;
+  if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      answer.style.marginBottom = "0";
+  } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      answer.style.marginBottom = "1.2em";
+  }
+})}
