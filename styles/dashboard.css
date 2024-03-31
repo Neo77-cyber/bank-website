@@ -188,7 +188,7 @@ header {
 }
 
 .dashboard > div {
-  height: auto; /* let the height adjust based on content */
+  height: fit-content; /* let the height adjust based on content */
 }
 .content-section {
   display: none;
